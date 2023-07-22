@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+    <!-- 웹 애플리케이션의 이름을 지정합니다. -->
+    <display-name>edu</display-name>
+    
+    <servlet>
+        <!-- 서블릿의 이름을 지정합니다. -->
+        <servlet-name>SessionTestServlet</servlet-name>
+        <!-- 서블릿 클래스의 패키지와 이름을 지정합니다. -->
+        <servlet-class>com.edu.test.SessionTestServlet</servlet-class>
+        <!-- 서블릿의 초기화 파라미터를 설정합니다. -->
+        <init-param>
+            <!-- 파라미터의 이름을 지정합니다. -->
+            <param-name>charset</param-name>
+            <!-- 파라미터의 값(UTF-8)을 지정합니다. -->
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <!-- 파라미터의 이름을 지정합니다. -->
+            <param-name>password</param-name>
+            <!-- 파라미터의 값(1004)을 지정합니다. -->
+            <param-value>1004</param-value>
+        </init-param>
+        <!-- 서블릿을 웹 애플리케이션 시작 시 초기화합니다. -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <!-- 서블릿의 이름을 지정합니다. -->
+        <servlet-name>SessionTestServlet</servlet-name>
+        <!-- 서블릿과 URL 패턴을 매핑합니다. -->
+        <url-pattern>/servletConfigTest</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <!-- 컨텍스트 파라미터의 이름을 지정합니다. -->
+        <param-name>SessionTestServlet</param-name>
+        <!-- 컨텍스트 파라미터의 값(/WEB-INF/context.xml)을 지정합니다. -->
+        <param-value>/WEB-INF/context.xml</param-value>
+    </context-param>
+</web-app>
